@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:aop="http://www.springframework.org/schema/aop"   
+       xsi:schemaLocation="http://www.springframework.org/schema/beans   
+       http://www.springframework.org/schema/beans/spring-beans.xsd   
+       http://www.springframework.org/schema/aop   
+       http://www.springframework.org/schema/aop/spring-aop.xsd">  
+      
+    <bean class="org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator">
+    </bean>  
+    
+    <aop:aspectj-autoproxy/>
+
+    <bean id="triangle" class="com.gaurav.java.aop.model.Triangle">
+    <property name="name" value="triangle name"/>
+    </bean>
+    
+    <bean id="circle" class="com.gaurav.java.aop.model.Circle">
+    <property name="name" value="circle name"/>
+    </bean>
+    
+    <bean id="shapeService" class="com.gaurav.java.aop.service.ShapeService" autowire="byName">
+    </bean>
+    
+  <bean id="logggingAspect" class="com.gaurav.java.aop.aspect.LoggingAspect"> 
+  </bean>
+
+</beans>
