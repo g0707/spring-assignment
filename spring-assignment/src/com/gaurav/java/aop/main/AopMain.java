@@ -1,5 +1,6 @@
 package com.gaurav.java.aop.main;
 
+import com.gaurav.java.aop.model.Circle;
 import com.gaurav.java.aop.service.FactoryService;
 import com.gaurav.java.aop.service.ShapeService;
 
@@ -9,6 +10,7 @@ public class AopMain
 	{
 		FactoryService factoryService=new FactoryService();
 		ShapeService shapeService=(ShapeService)factoryService.getBean("shapeService");
-		shapeService.getCircle();
+		Circle c=shapeService.getCircle();
+/*		System.out.println(c);*/
 	}
 }

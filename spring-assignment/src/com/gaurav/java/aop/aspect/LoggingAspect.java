@@ -2,6 +2,8 @@ package com.gaurav.java.aop.aspect;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
@@ -38,7 +40,20 @@ public class LoggingAspect
 		System.out.println("After Finally");
 	}
 	
-	@Pointcut("execution( * get *())")
+	@AfterReturning("args(name)")
+	public void stringArgumentMethods(String name) 
+	{
+		System.out.println("After Returning Advice will run only when the method before it will run");
+	}
+	
+	
+	@AfterThrowing("args(name)")
+	public void exceptionAdvice(String name) 
+	{
+		System.out.println("An Exception has been Thrown and After Throwing Advice has run");
+	}
+	
+	@Pointcut("execution(* com.gaurav.java.aop.service.get(..))")
 	public void allGetters() 
 	{
 		

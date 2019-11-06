@@ -12,5 +12,7 @@ public class Circle
 	public void setName(String name) 
 	{
 		this.name = name;
+		System.out.println("Circle's Setter called");
+		throw (new RuntimeException());
 	}
 }

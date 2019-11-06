@@ -13,18 +13,19 @@
     
     <aop:aspectj-autoproxy/>
 
-    <bean id="triangle" class="com.gaurav.java.aop.model.Triangle">
-    <property name="name" value="triangle name"/>
-    </bean>
-    
+
     <bean id="circle" class="com.gaurav.java.aop.model.Circle">
     <property name="name" value="circle name"/>
+    </bean>
+    
+    <bean id="triangle" class="com.gaurav.java.aop.model.Triangle">
+    <property name="name" value="triangle name"/>
     </bean>
     
     <bean id="shapeService" class="com.gaurav.java.aop.service.ShapeService" autowire="byName">
     </bean>
     
-  <bean id="logggingAspect" class="com.gaurav.java.aop.aspect.LoggingAspect"> 
-  </bean>
+ <!--  <bean id="logggingAspect" class="com.gaurav.java.aop.aspect.LoggingAspect"> 
+  </bean> -->
 
 </beans>
